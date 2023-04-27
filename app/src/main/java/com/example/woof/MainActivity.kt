@@ -40,6 +40,10 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -90,6 +94,7 @@ fun WoofApp() {
  */
 @Composable
 fun DogItem(dog: Dog) {
+    var expanded by remember { mutableStateOf(false) }
     Card(
         modifier = Modifier.padding(8.dp),
         elevation = 4.dp
